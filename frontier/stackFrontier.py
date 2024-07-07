@@ -1,4 +1,5 @@
-from ..node import Node
+from node import Node
+
 
 class StackFrontier():
     def __init__(self) -> None:
@@ -10,7 +11,7 @@ class StackFrontier():
     def empty(self) -> bool:
         return len(self.frontier) == 0
     
-    def containState(self, state: Node.state) -> bool:
+    def containState(self, state: object) -> bool:
         return any(node.state == state for node in self.frontier)
     
     def remove(self) ->  Node:
