@@ -34,10 +34,10 @@ class Maze:
                 except IndexError:
                     row.append(False)
             self.walls.append(row)
+            self.nodes = []
 
 
     def getNeighboards(self, state):
-        self.nodes = []
         (row, col) = state
         candidates = [
             ("up",      (row - 1, col   )),
@@ -54,3 +54,13 @@ class Maze:
                 ):
                 neighboards.append(action, (r,c))
         return neighboards
+
+    def makeNode(self, state):
+        action, neighboards = self.getNeighboards(state)
+        node = Node(
+            state = state,
+            paren = None,
+            action = None,
+            neighboards = neighboards
+        )
+        self.nodes.append()
