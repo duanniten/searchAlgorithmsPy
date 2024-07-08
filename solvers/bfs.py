@@ -2,7 +2,7 @@ from node import Node
 from frontier import StackFrontier
 from maze import Maze
 
-class bfs():
+class BFS():
     def __init__(self, maze:Maze) -> None:
         self.num_explored = 0
         self.explored = set()
