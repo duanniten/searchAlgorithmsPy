@@ -1,26 +1,19 @@
 from node import Node
 from frontier import StackFrontier
-from maze import Maze
 
 class bfs():
-    def __init__(self, startNode : Node, goal: object) -> None:
+    def __init__(self, startNode : Node, goalNode : Node) -> None:
         self.num_explored = 0
         self.explored = set()
         self.start = startNode
+        self.goal = goalNode
         self.frontier = StackFrontier()
-        self.frontier.add(startNode.state)
-        self.goal = goal
-        self.maze = None
+        self.frontier.add(startNode.neighboards)
 
-    def getMaze(self, maze : Maze):
-        self.maze = maze
-        
+      
     def solver(self):
         while True:
-
-            if self.maze == None:
-                raise Exception('There is no maze')
-            
+           
             if self.frontier.empty():
                 raise Exception('no solution')
             
@@ -41,7 +34,9 @@ class bfs():
 
             self.explored.add(node.state)
 
-            for action, state in self.maze.getNeighboard(node):
-                if not self.frontier.containState(state) and state not in self.explored:
-                    child = Node(state= state, parent= node, action= action)
-
+            for neighboar in node.neighboards:
+                if (
+                    not self.frontier.containState(neighboar.state) and
+                    neighboar.state not in self.explored
+                    ):
+                    self.frontier.add(neighboar)
