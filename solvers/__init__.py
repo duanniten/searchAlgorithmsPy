@@ -1,1 +1,1 @@
-from bfs import BFS
+from .bfs import BFS

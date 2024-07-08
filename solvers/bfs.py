@@ -45,7 +45,9 @@ class BFS():
                     not self.frontier.containState(neighboard) and
                     neighboard not in self.explored
                     ):
-                    self.frontier.add(neighboard)
+                    self.addNode(
+                        state= neighboard
+                    )
     
     def addNode(self, state):
         neighboards = self.maze.getNeighboards(state = state)
