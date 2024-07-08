@@ -1,3 +1,3 @@
-from frontier import StackFrontier
+from maze import Maze
 
-teste = StackFrontier()
+maze1 = Maze('mazes_test\maze1.txt')
