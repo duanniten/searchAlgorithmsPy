@@ -35,6 +35,7 @@ class Maze:
                     row.append(False)
             self.walls.append(row)
             self.nodes = []
+            self.makeNode(state = self.start)
 
 
     def getNeighboards(self, state):
@@ -52,7 +53,7 @@ class Maze:
                 0 <= c <self.width and
                 not self.walls[r][c]
                 ):
-                neighboards.append(action, (r,c))
+                neighboards.append((r,c))
         return neighboards
 
     def makeNode(self, state):
@@ -63,4 +64,4 @@ class Maze:
             action = None,
             neighboards = neighboards
         )
-        self.nodes.append()
+        self.nodes.append(node)
