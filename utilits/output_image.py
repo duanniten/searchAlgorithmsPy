@@ -1,7 +1,7 @@
 from maze import Maze
 
 
-def output_image(self, Savefilename,solver,maze:Maze, show_solution=True, show_explored=False):
+def outputImage(Savefilename,solver,maze:Maze, show_solution=True, show_explored=False):
         from PIL import Image, ImageDraw
         cell_size = 50
         cell_border = 2
@@ -14,7 +14,7 @@ def output_image(self, Savefilename,solver,maze:Maze, show_solution=True, show_e
         )
         draw = ImageDraw.Draw(img)
 
-        solution = solution[1] if solution is not None else None
+        solution = solver.solution[1] if solver.solution is not None else None
         for i, row in enumerate(maze.walls):
             for j, col in enumerate(row):
 
