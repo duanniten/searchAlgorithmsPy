@@ -51,5 +51,5 @@ class Maze:
                 0 <= c <self.width and
                 not self.walls[r][c]
                 ):
-                neighboards.append((r,c))
+                neighboards.append((action, (r,c)))
         return neighboards

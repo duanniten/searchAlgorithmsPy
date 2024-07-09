@@ -40,20 +40,25 @@ class BFS():
             if len(node.neighboards) == 0:
                 raise Exception ('no neigboards')
 
-            for neighboard in node.neighboards:
+            for action, neighboard in node.neighboards:
                 if (
                     not self.frontier.containState(neighboard) and
                     neighboard not in self.explored
                     ):
+                    
                     self.addNode(
-                        state= neighboard
+                        state = neighboard,
+                        parent = node,
+                        action = action
                     )
     
-    def addNode(self, state):
+    def addNode(self, state, parent=None, action = None):
         neighboards = self.maze.getNeighboards(state = state)
         self.frontier.add(
             Node(
                 state = state,
+                parent= parent,
+                action= action,
                 neighboards = neighboards
             )
         )
