@@ -31,7 +31,7 @@ def outputImage(Savefilename,solver,maze:Maze, show_solution=True, show_explored
                     fill = (0, 171, 28)
 
                 # Solution
-                elif solution is not None and show_solution and (i, j) in solver.solution:
+                elif solution is not None and show_solution and (i, j) in solution:
                     fill = (220, 235, 113)
 
                 # Explored

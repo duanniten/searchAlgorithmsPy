@@ -1,8 +1,8 @@
 from node import Node
-from frontier import QueueFrontier
+from frontier import StackFrontier
 from maze import Maze
 
-class BFS():
+class DPS():
     def __init__(self, maze:Maze) -> None:
         self.num_explored = 0
         self.explored = set()
@@ -10,7 +10,7 @@ class BFS():
         self.start = maze.start
         self.goal = maze.goal 
 
-        self.frontier = QueueFrontier()
+        self.frontier = StackFrontier()
         self.addNode(self.start)
 
       
