@@ -24,6 +24,8 @@ def main():
     print("Data loaded.")
 
     degre.getSourceTarget()
+    source = degre.source
+    target = degre.target
     degre.shortest_path()
     degre.showResult()
 
