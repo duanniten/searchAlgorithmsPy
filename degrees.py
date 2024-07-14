@@ -1,10 +1,12 @@
 from degrees import Degress
 import sys
 
-
+degre = Degress()
 def load_data(directory):
-    degre = Degress()
     degre.load_data(directory)
+
+def person_id_for_name(name):
+    return degre.person_id_for_name(name)
 
 def main():
     if len(sys.argv) > 2:
