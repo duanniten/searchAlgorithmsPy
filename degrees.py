@@ -1,6 +1,11 @@
 from degrees import Degress
 import sys
 
+
+def load_data(directory):
+    degre = Degress()
+    degre.load_data(directory)
+
 def main():
     if len(sys.argv) > 2:
         sys.exit("Usage: python degrees.py [directory]")
