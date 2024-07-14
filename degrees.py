@@ -8,6 +8,9 @@ def load_data(directory):
 def person_id_for_name(name):
     return degre.person_id_for_name(name)
 
+def shortest_path(source, target):
+    degre.shortest_path()
+
 def main():
     if len(sys.argv) > 2:
         sys.exit("Usage: python degrees.py [directory]")
